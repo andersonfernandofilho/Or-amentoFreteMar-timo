@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <link href="../FreteMaritimo/reset.css" rel="stylesheet"/>
+        <link href="../FreteMaritimo/style.css" rel="stylesheet"/>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+        </style>
+
+    </head>
+    <body>
+        <main class="container">
+            <h1 class="title">Orçamento de Frete Marítimo.</h1>
+            <form >
+                <div class="fatpes">
+                    <label for="fatura" class="preencher">Valor da Fatura Comercial:</label>
+                    <input type="number" id="fatura" class="preencher">                
+                    <label for="peso" class="preencher">Peso do Container:</label>
+                    <input type="number" id="peso" class="preencher">
+                </div>
+                <div class="teu">
+                    <p>Qual é o tamanho do Container?</p>                    
+                    <label for="baude20"><input type="radio" name="tamanho" value="200" id="baude20">20'</label>                    
+                    <label for="baude40"><input type="radio" name="tamanho" value="400" id="baude40">40'</label>                    
+                    <label for="baude40HC"><input type="radio" name="tamanho" value="500" id="baude40HC">40'HC</label>
+                </div>
+                <div class="refri">
+                    <p>Este container é refrigerado?</p>
+                    <label for="simRefrigerado"><input type="radio" name="refrigerado" value="1000" id="simRefrigerado">Sim, é refrigerado.</label>
+                    <label for="naoRefrigerado"><input type="radio" name="refrigerado" value="100" id="naoRefrigerado">Não, não é refrigerado.</label>
+                </div>
+                <div class="refriLigado">
+                    <p>Manter o genset de refrigeração ligado?</p>
+                    <label for="simLigado"><input type="radio" name="ligado" value="1000" id="simLigado">Sim, manter ligado.</label>
+                    <label for="naoLigado"><input type="radio" name="ligado" value="0" id="naoLigado">Não, não manter ligado.</label>
+                </div>
+                <div class="perigo">
+                    <p>A carga possui especificação internacional IMO? (Carga Perigosa)</p>
+                    <label for="simPerigosa"><input type="radio" name="IMO" value="850" id="simPerigosa">Sim, carga perigosa.</label>
+                    <label for="naoPerigosa"><input type="radio" name="IMO" value="0" id="naoPerigosa">Não, carga não perigosa.</label>
+                </div>
+                <div class="contin">
+                    <p>Escolher Continente de Destino</p>
+                    <label for="americas"><input type="radio" name="continente" value="500" id="americas">Américas</label>
+                    <label for="europa"><input type="radio" name="continente" value="1000" id="europa">Europa</label>
+                    <label for="africa"><input type="radio" name="continente" value="750" id="africa">África</label>
+                    <label for="asia"><input type="radio" name="continente" value="2000" id="asia">Ásia</label>
+                    <label for="oceania"><input type="radio" name="continente" value="2500" id="oceania">Oceania</label>
+                </div>
+                <div class="segu">
+                    <p>Adicionar seguro ao frete?</p>
+                    <label for="comSeguro"><input type="radio" name="seguro" value="500" id="comSeguro">Sim, adicionar seguro.</label>
+                    <label for="semSeguro"><input type="radio" name="seguro" value="0" id="semSeguro">Não, não adicionar seguro.</label>
+                </div>
+            </form>
+            <button class="botao" id='calcular'>Calcular Frete</button>
+            <div class="result" id='resultado'></div>
+        </main>
+        <script src="./frete.js"></script>
+    </body>
+</html>
